@@ -27,43 +27,25 @@ Ejemplo:
     Salida:
         Name: Juan, Age: 20, Average: 8.75
 
-Enunciat:
-Crea una classe anomenada "Student" amb alta cohesió, que
-emmagatzemi informació bàsica d'un estudiant (name, age i average)
-i tingui dos mètodes: "descriu" i "grade". El mètode "descriu"
-ha de tornar una cadena amb la informació bàsica de l'estudiant
-i el mètode "grade" ha d'actualitzar la mitjana de l'estudiant amb
-una nova qualificació.
-
-Paràmetres:
-     name = Una cadena que representa el name de l'estudiant.
-     age = Un nombre enter que representa l'edat de lestudiant.
-     average = Un nombre decimal que representa la mitjana de l'estudiant.
-
-Mètodes:
-     - descriu() = Retorna una cadena amb la informació bàsica del
-     estudiant.
-     - grade(new_grade) = Actualitza la mitjana de l'estudiant amb una
-     nova qualificació.
-
-Exemple:
-     Entrada:
-         student1 = Student("Juan", 20, 8.5)
-         student1.grade(9.0)
-         print(student1.describe())
-
-     Sortida:
-         Name: Juan, Age: 20, Average: 8.75
 """
 
-# Corret and overwrite class Student here 
 class Student:
-    def __init__(self):
-        pass
+    def __init__(self,name,age,average):
+        self.name = name
+        self.age = age
+        self.average = average
+
+    def describe (self):
+        return f"Name: {self.name}, Age: {self.age}, Average: {self.average}"
+    
+    def grade (self,new_grade):
+        self.average = (self.average + new_grade) / 2
+    
+
        
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
-# Si vols provar el teu codi, descomenta les línies següents i executa l'script
 # student1 = Student("Pedro", 49, 8.5)
+# print(student1.describe())
 # student1.grade(9.2)
 # print(student1.describe())

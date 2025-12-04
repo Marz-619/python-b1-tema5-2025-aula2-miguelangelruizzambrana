@@ -33,63 +33,29 @@ Ejemplo:
         Meow
         Quack
 
-Enunciat:
-Implementa una jerarquia de classes per representar
-animals que poden emetre sons. Hi ha una classe abstracta "Animal"
-que defineix un mètode abstracte "make_sound". També, implementa tres
-classes concretes "Dog", "Cat" i "Duck" que hereten de la classe "Animal"
-i implementen el seu propi mètode "make_sound" per representar el so
-que cada animal emet.
-
-Després d'implementar les classes heu de crear una llista d'animals
-que inclogui un gos, un gat i un ànec, i es recorri la llista fent
-que cada animal emeti el so corresponent usant la funció
-"make_sound" i s'imprimeix el so que emet cada animal.
-
-Classes:
-     - Animal: Classe abstracta que representa l'abstracció d'un animal i
-     defineix el mètode abstracte "make_sound".
-     - Dog: Classe que hereta de "Animal" i representa un gos, defineix el seu
-     propi mètode "make_sound" que torna "Woof".
-     - Cat: Classe que hereta de "Animal" i representa un gat, defineix la seva
-     propi mètode "make_sound" que torna "Meow"
-     - Duck: Classe que hereta de "Animal" i representa un ànec, defineix el seu
-     propi mètode "make_sound" que torna "Quack"
-
-Exemple:
-     Entrada:
-         animals = [Dog(), Cat(), Duck()]
-         for animal in animals:
-             print(f'{animal.make_sound()}')
-
-     Sortida:
-         Woof
-         Meow
-         Quack
 """
 
 from abc import ABC, abstractmethod
 
-# Corret and overwrite class Animal here 
 class Animal(ABC):
-    pass
+    @abstractmethod
+    def make_sound(self):
+        pass
 
-# Corret and overwrite class Dog(Animal) here
-class Dog():
-    pass
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof"
 
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow" 
 
-# Corret and overwrite class class Cat(Animal) here
-class Cat():
-    pass
-
-# Corret and overwrite class Duck(Animal) here
-class Duck():
-    pass
+class Duck(Animal):
+    def make_sound(self):
+        return "Quack"
 
 # Create a list of animals here
-animals = []
+animals = [Dog(), Cat(), Duck()]
 # Print animals sounds
 for animal in animals:
-    # Write your code here
-    pass
+    print(animal.make_sound())

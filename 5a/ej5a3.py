@@ -26,41 +26,21 @@ Ejemplo:
         1234
         5678
 
-Enunciat:
-Crea una classe anomenada "SafeWalletCredentials" que representi una
-cartera electrònica que emmagatzema monedes digitals i permet
-establir i obtenir la contrasenya de la cartera usant
-encapsulamiento.
-
-El constructor ha de tenir el paràmetre password.
-
-Paràmetres:
-    - password: una cadena que representa la contrasenya de la
-    cartera electrònica.
-
-Mètodes:
-    - set_password(password): estableix la contrasenya de la cartera.
-    - get_password(): retorna la contrasenya de la cartera.
-
-Exemple:
-    Entrada:
-        safe_wallet = SafeWalletCredentials("1234")
-        print(safe_wallet.get_password())
-        safe_wallet.set_password("5678")
-        print(safe_wallet.get_password())
-
-    Sortida:
-        1234
-        5678
 """
 
-# Corret and overwrite class SafeWalletCredentials here 
 class SafeWalletCredentials:
-    pass
+    def __init__(self,password):
+        self.__password = password
+
+    def set_password(self, new_password):
+        self.__password = new_password
+
+    def get_password(self):
+        return self.__password
+    
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
-# Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
 # pedro_wallet = SafeWalletCredentials("1234A")
 # print(pedro_wallet.get_password())
